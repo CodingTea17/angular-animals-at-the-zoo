@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
+import { Animal } from './animal.model';
 
 @Component({
   selector: 'my-app',
   template: `
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron text-center">
         <h1>{{title}}</h1>
+        <a routerLink="/" routerLinkActive="active">View Animals</a> |
+        <a routerLink="/new" routerLinkActive="active">New Animal</a>
       </div>
-      <animal-list></animal-list>
+      <router-outlet></router-outlet>
     </div>
   `
 })

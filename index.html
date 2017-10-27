@@ -13,11 +13,11 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
-
     <link rel="stylesheet" href="build/css/styles.css">
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
+    <base href="/">
   </head>
   <!-- 3. Display the application -->
   <body>
