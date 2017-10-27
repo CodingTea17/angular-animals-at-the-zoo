@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
       <div class="jumbotron">
         <h1>{{title}}</h1>
       </div>
+      <animal-list></animal-list>
     </div>
   `
 })
