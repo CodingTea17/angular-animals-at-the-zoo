@@ -9,7 +9,7 @@ import { AnimalService } from './animal.service';
     <div class="row">
       <div class="col-4">
         <div class="list-group" id="list-tab" role="tablist">
-          <a *ngFor="let angularAnimal of angularAnimals" class="list-group-item list-group-item-action" data-toggle="list" href="#{{angularAnimal.name}}" role="tab">{{angularAnimal.name}}</a>
+          <a *ngFor="let angularAnimal of angularAnimals | oldies" class="list-group-item list-group-item-action" data-toggle="list" href="#{{angularAnimal.name}}" role="tab">{{angularAnimal.name}}</a>
         </div>
       </div>
       <div class="col-8">
