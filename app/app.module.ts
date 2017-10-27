@@ -5,6 +5,7 @@ import { AnimalListComponent } from './animal-list.component';
 import { NewAnimalComponent } from './new-animal.component';
 import { FormsModule }  from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { YounginsPipe } from './youngins.pipe';
 
 const appRoutes: Routes = [
   {
@@ -26,8 +27,10 @@ const appRoutes: Routes = [
               RouterModule.forRoot(appRoutes),
             ],
   declarations: [ AppComponent,
-                AnimalListComponent,
-                NewAnimalComponent ],
+                  AnimalListComponent,
+                  NewAnimalComponent,
+                  YounginsPipe,
+                ],
   bootstrap: [ AppComponent ]
 })
 
