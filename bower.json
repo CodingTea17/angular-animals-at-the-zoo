@@ -1,0 +1,17 @@
+{
+  "name": "angular-animals-at-the-zoo",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-beta"
+  }
+}
