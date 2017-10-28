@@ -46,7 +46,7 @@ import { AnimalService } from './animal.service';
               <h2 class="text-center">{{angularAnimal.name}} ({{angularAnimal.species}})</h2>
               <div class="row">
                 <div class="col-lg-6 col-sm-12">
-                  <img src="{{angularAnimal.imgurl}}" class="img-fluid" alt="Responsive image">
+                  <img src="{{angularAnimal.imgurl}}" class="img-fluid" alt="No Image Provided">
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <h4>Age: {{angularAnimal.age}}</h4>

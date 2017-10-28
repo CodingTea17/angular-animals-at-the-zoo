@@ -1,8 +1,10 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { AnimalService } from './animal.service';
 import { Animal } from './animal.model';
 
 @Component({
   selector: 'new-animal',
+  providers: [AnimalService],
   template: `
     <div class="row mb-3 ">
       <div class="col">
@@ -38,7 +40,8 @@ import { Animal } from './animal.model';
 })
 
 export class NewAnimalComponent {
+  constructor(private animalService: AnimalService) {}
   submitForm(name: string, species: string, age: number, diet: string, location: string, caretakers: number, sex: string, likes: string, dislikes: string, imgurl: string) {
-    var newAnimal: Animal = new Animal(name, species, age, diet, location, caretakers, sex, likes, dislikes, imgurl);
+    this.animalService.addAnimal(name, species, age, diet, location, caretakers, sex, likes, dislikes, imgurl);
   }
 }

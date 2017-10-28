@@ -10,4 +10,8 @@ export class AnimalService {
   getAnimals() {
     return ANIMALS;
   }
+
+  addAnimal(name, species, age, diet, location, caretakers, sex, likes, dislikes, imgurl) {
+    ANIMALS.push(new Animal(name, species, age, diet, location, caretakers, sex, likes, dislikes, imgurl));
+  }
 }
