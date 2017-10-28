@@ -32,7 +32,7 @@ import { Animal } from './animal.model';
               <input class="form-control form-control" #newImgurl placeholder="Image URL"><br>
             </div>
           </div>
-          <button class="btn btn-success btn-block" (click)="submitForm(newName.value, newAge.value, newLocation.value, newSex.value, newSpecies.value, newDiet.value, newCaretakers.value, newLikes.value, newImgurl.value); newName.value=''; newAge.value=''; newLocation.value=''; newSex.value=''; newSpecies.value=''; newDiet.value=''; newCaretakers.value=''; newLikes.value=''; newImgurl.value=''">Add to Zoo!</button>
+          <button class="btn btn-success btn-block" (click)="submitForm(newName.value, newAge.value, newLocation.value, newSex.value, newSpecies.value, newDiet.value, newCaretakers.value, newLikes.value, newDislikes.value, newImgurl.value); newName.value=''; newAge.value=''; newLocation.value=''; newSex.value=''; newSpecies.value=''; newDiet.value=''; newCaretakers.value=''; newLikes.value=''; newImgurl.value=''">Add to Zoo!</button>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@ import { Animal } from './animal.model';
 
 export class NewAnimalComponent {
   constructor(private animalService: AnimalService) {}
-  submitForm(name: string, species: string, age: number, diet: string, location: string, caretakers: number, sex: string, likes: string, dislikes: string, imgurl: string) {
+  submitForm(name: string, age: number, location: string, sex: string, species: string, diet: string, caretakers: number,  likes: string, dislikes: string, imgurl: string) {
     this.animalService.addAnimal(name, species, age, diet, location, caretakers, sex, likes, dislikes, imgurl);
   }
 }
