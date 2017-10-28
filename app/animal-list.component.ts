@@ -8,9 +8,36 @@ import { AnimalService } from './animal.service';
   template: `
     <div class="row">
       <div class="col-4">
-        <div class="list-group" id="list-tab" role="tablist">
-          <a *ngFor="let angularAnimal of angularAnimals | oldies" class="list-group-item list-group-item-action" data-toggle="list" href="#{{angularAnimal.name}}" role="tab">{{angularAnimal.name}}</a>
-        </div>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-dark">
+          <div class="row" id="button-row">
+            <div class="col-4">
+              <button (click)="showAll()" class="btn btn-dark btn-block">All</button>
+            </div>
+            <div class="col-4">
+              <button (click)="showOldies()" class="btn btn-dark btn-block">Oldies</button>
+            </div>
+            <div class="col-4">
+              <button (click)="showYoungins()" class="btn btn-dark btn-block text-center">Youngins</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+        <ng-container *ngIf="selectedAges === 'all'">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a *ngFor="let angularAnimal of angularAnimals" class="list-group-item list-group-item-action" data-toggle="list" href="#{{angularAnimal.name}}" role="tab">{{angularAnimal.name}}</a>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="selectedAges === 'oldies'">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a *ngFor="let angularAnimal of angularAnimals | oldies" class="list-group-item list-group-item-action" data-toggle="list" href="#{{angularAnimal.name}}" role="tab">{{angularAnimal.name}}</a>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="selectedAges === 'youngins'">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a *ngFor="let angularAnimal of angularAnimals | youngins" class="list-group-item list-group-item-action" data-toggle="list" href="#{{angularAnimal.name}}" role="tab">{{angularAnimal.name}}</a>
+          </div>
+        </ng-container>
       </div>
       <div class="col-8">
         <div class="tab-content" id="nav-tabContent">
@@ -41,10 +68,23 @@ import { AnimalService } from './animal.service';
 
 export class AnimalListComponent implements OnInit {
   angularAnimals: Animal[];
+  selectedAges = "all";
 
   constructor(private animalService: AnimalService) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.angularAnimals = this.animalService.getAnimals();
+  }
+
+  showOldies() {
+    this.selectedAges = "oldies";
+  }
+
+  showYoungins() {
+    this.selectedAges = "youngins";
+  }
+
+  showAll() {
+    this.selectedAges = "all";
   }
 }
