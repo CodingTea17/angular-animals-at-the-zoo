@@ -3,7 +3,22 @@
   padding-right: 0;
 }
 
-.col-4 {
+.col-3 {
   padding-left: 3px;
   padding-right: 3px;
+}
+
+.a-link {
+  color: blue !important;
+}
+
+.a-link:hover {
+  color: #007bff !important;
+  cursor: pointer !important;
+}
+
+#filter-item {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 0;
 }

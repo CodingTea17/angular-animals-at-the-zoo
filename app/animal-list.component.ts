@@ -9,16 +9,19 @@ import { AnimalService } from './animal.service';
     <div class="row">
       <div class="col-4">
         <ul class="list-group">
-          <li class="list-group-item list-group-item-dark">
+          <li class="list-group-item list-group-item-dark" id="filter-item">
             <div class="row" id="button-row">
-              <div class="col-4">
-                <button (click)="showAll()" class="btn btn-dark btn-block">All</button>
+              <div class="col-3 text-left">
+                Filter:
               </div>
-              <div class="col-4">
-                <button (click)="showOldies()" class="btn btn-dark btn-block">Oldies</button>
+              <div class="col-3 text-center">
+                <a (click)="showAll()" class="a-link">All</a>
               </div>
-              <div class="col-4">
-                <button (click)="showYoungins()" class="btn btn-dark btn-block text-center">Youngins</button>
+              <div class="col-3 text-center">
+                <a (click)="showOldies()" class="a-link">Oldies</a>
+              </div>
+              <div class="col-3 text-center">
+                <a (click)="showYoungins()" class="a-link">Youngins</a>
               </div>
             </div>
           </li>
