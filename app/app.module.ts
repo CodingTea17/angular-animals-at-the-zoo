@@ -10,12 +10,9 @@ import { OldiesPipe } from './oldies.pipe';
 
 const appRoutes: Routes = [
   {
-    path: 'list',
+    path: '',
     component: AnimalListComponent
   },
-  { path: '',
-    redirectTo: '/list',
-    pathMatch: 'full' },
   {
     path: 'new',
     component: NewAnimalComponent
